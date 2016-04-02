@@ -1,0 +1,165 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600);
+@import url(https://fonts.googleapis.com/css?family=PT+Sans:400);
+
+.rslides img {
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+.rslides {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    z-index: 0;
+    overflow: hidden;
+    -webkit-transition: all 0.8s linear; transition: all 0.8s linear;
+}
+.change {color: #ff3030; z-index: 9999}
+.node {color: green}
+.js {color: greenyellow}
+.html {color: firebrick}
+.css {color: royalblue}
+.angular {color: red}
+/** Verificar uma forma de deixar textos responsivos **/
+h1 {font-size: 3vw; font-family: 'Open Sans', sans-serif; font-weight: 600; color: white; position: relative;
+    text-align: center; text-shadow: 0 0 40px #000000;}
+h2 {font-size: 1.6vw; font-family: 'Open Sans', sans-serif; font-weight: 400; color: white; position: relative;
+    text-align: center;text-shadow: 0 0 20px #000000;}
+
+
+#reset {
+    margin: 0;
+    float: none;
+    top: 0px;
+}
+
+body {
+    background-color: #888;
+}
+
+footer {
+    position: fixed;
+    background-color: black;
+    width: 100%;
+    height: 80px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+#sobre-div {
+    margin: 90px auto;
+    width: 75%;
+    max-height: 75%;
+    overflow: hidden;
+}
+
+#sobre-div h2 {
+    text-align: left;
+}
+
+p {
+    font-size: 16px; font-family: 'PT Sans', sans-serif; font-weight: 400; color: white; position: relative;
+}
+
+#footer h2 {
+    font-size: 12px;
+    text-align: left;
+}
+
+.col-75 {
+    float: left;
+    padding-left: 20px;
+    text-align: left;
+    margin: 15px auto;
+    width: 50%;
+}
+
+.sobre-inner {
+    margin: 30px auto;
+    position: relative;
+    width: 80%;
+}
+
+.name:first-letter {
+   color: red;
+}
+
+.sobre-inner img {
+    margin-top: 20px;
+    width: 120px;
+    border: 2px solid red;
+    border-radius: 150px;
+	-webkit-border-radius: 150px;
+	-moz-border-radius: 150px;
+}
+
+.sobre-inner2 {
+    margin-left: 17.5%;
+}
+
+.heart {
+    color: red;
+    -webkit-animation: beat .25s infinite alternate;
+    animation: beat .25s infinite alternate;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+}
+
+@-webkit-keyframes beat { to { -webkit-transform: scale(1.4); transform: scale(1.4) } }
+
+@keyframes beat { to { -webkit-transform: scale(1.4); transform: scale(1.4) } }
+
+.name {
+    border-bottom: 2px solid red;
+}
+
+.sobre-inner2 p{
+    text-align: justify;
+}
+
+.leao {
+    float: left;
+}
+
+.left {
+    float: left;
+}
+.right {
+    float: right;
+}
+
+#main-text {
+    /** TODO: Centralizar essa div corretamente e o seu texto **/
+    position:relative;
+    margin: 0 auto;
+    padding-top: 11.4em;
+}
+
+.h2-sobre {
+    font-family: 'PT Sans', sans-serif;
+    font-weight: 400;
+    font-size: 20;
+}
+
+@media only screen and (max-width: 1024px) {
+    h1 {font-size: 7vw; }
+    h2 {font-size: 5.6vw;}
+    p {font-size: 25px}
+    .sobre-inner img {margin-top: -9px; width: 44px;}
+    #sobre-div {width: 75%;}
+}
+
+@media only screen and (max-width: 800px) {
+    h1 {font-size: 7vw; }
+    h2 {font-size: 5.6vw;}
+    .sobre-inner img {margin-top: -9px; width: 44px;}
+}
+
+@media only screen and (max-width: 600px) {
+    h1 {font-size: 7vw; }
+    h2 {font-size: 5.6vw;}
+    .sobre-inner img {margin-top: -9px; width: 44px;}
+}

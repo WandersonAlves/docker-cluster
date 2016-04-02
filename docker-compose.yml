@@ -1,4 +1,4 @@
-portal:
+neweb:
   image: nginx
   ports:
    - "8080:80"

@@ -1,0 +1,26 @@
+.demo-2{
+  color: #314559;
+  padding: 10px 0;
+}
+ 
+.demo-2::before {
+  color: #fff;
+  max-width: 0;
+  padding: 10px 0;
+  border-top: 1px dashed #fff;
+  border-bottom: 1px dashed #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  content: attr(data-text);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+ 
+.demo-2:hover::before,
+.demo-2:focus::before {
+  max-width: 100%;
+  outline: none;
+  text-shadow: none;
+}
