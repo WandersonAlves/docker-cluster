@@ -3,7 +3,7 @@ neweb:
   ports:
    - "8080:80"
   volumes:
-   - cluster/default.conf:/etc/nginx/conf.d/default.conf
+   - ./cluster/default.conf:/etc/nginx/conf.d/default.conf
   links:
    - tomcatOne:tomcat1
    - tomcatTwo:tomcat2
@@ -11,20 +11,20 @@ neweb:
 tomcatOne:
   image: tomcat
   volumes:
-   - cluster/server.xml:/usr/local/tomcat/conf/server.xml
-   - cluster/ROOT:/usr/local/tomcat/webapps/ROOT
-   - cluster/tomcat-users.xml:/usr/local/tomcat/conf/tomcat-users.xml
+   - ./cluster/server.xml:/usr/local/tomcat/conf/server.xml
+   - ./cluster/ROOT:/usr/local/tomcat/webapps/ROOT
+   - ./cluster/tomcat-users.xml:/usr/local/tomcat/conf/tomcat-users.xml
 tomcatTwo:
   image: tomcat
   volumes:
-   - cluster/server.xml:/usr/local/tomcat/conf/server.xml
-   - cluster/ROOT:/usr/local/tomcat/webapps/ROOT
-   - cluster/tomcat-users.xml:/usr/local/tomcat/conf/tomcat-users.xml
+   - ./cluster/server.xml:/usr/local/tomcat/conf/server.xml
+   - ./cluster/ROOT:/usr/local/tomcat/webapps/ROOT
+   - ./cluster/tomcat-users.xml:/usr/local/tomcat/conf/tomcat-users.xml
 tomcatThree:
   image: tomcat
   volumes:
-   - cluster/server.xml:/usr/local/tomcat/conf/server.xml
-   - cluster/ROOT:/usr/local/tomcat/webapps/ROOT
-   - cluster/tomcat-users.xml:/usr/local/tomcat/conf/tomcat-users.xml
+   - ./cluster/server.xml:/usr/local/tomcat/conf/server.xml
+   - ./cluster/ROOT:/usr/local/tomcat/webapps/ROOT
+   - ./cluster/tomcat-users.xml:/usr/local/tomcat/conf/tomcat-users.xml
 
 
