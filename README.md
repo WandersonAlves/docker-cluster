@@ -1,5 +1,5 @@
 # docker-cluster
-Tomcat Clustering inside the Docker
+Tomcat Clustering inside the Docker (docker-compose version 1.3, for 1.6, see `docker-compose-1.6` branch)
 
 # Creating cluster
 `docker-compose up`
