@@ -1,4 +1,4 @@
-neweb:
+nginx:
   image: nginx
   ports:
    - "8080:80"
@@ -8,23 +8,30 @@ neweb:
    - tomcatOne:tomcat1
    - tomcatTwo:tomcat2
    - tomcatThree:tomcat3
+  container_name: nginxMaster
 tomcatOne:
   image: tomcat
   volumes:
    - cluster/server.xml:/usr/local/tomcat/conf/server.xml
    - cluster/ROOT:/usr/local/tomcat/webapps/ROOT
    - cluster/tomcat-users.xml:/usr/local/tomcat/conf/tomcat-users.xml
+  cpuset: 0,1
+  container_name: tomcatSlave_1
 tomcatTwo:
   image: tomcat
   volumes:
    - cluster/server.xml:/usr/local/tomcat/conf/server.xml
    - cluster/ROOT:/usr/local/tomcat/webapps/ROOT
    - cluster/tomcat-users.xml:/usr/local/tomcat/conf/tomcat-users.xml
+  cpuset: 0,1
+  container_name: tomcatSlave_2
 tomcatThree:
   image: tomcat
   volumes:
    - cluster/server.xml:/usr/local/tomcat/conf/server.xml
    - cluster/ROOT:/usr/local/tomcat/webapps/ROOT
    - cluster/tomcat-users.xml:/usr/local/tomcat/conf/tomcat-users.xml
+  cpuset: 0,1
+  container_name: tomcatSlave_3
 
 
