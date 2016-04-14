@@ -1,0 +1,35 @@
+nginx:
+  image: nginx
+  container_name: nginxServerLoadBalancer
+  ports:
+   - "8080:80"
+  volumes:
+   - ./cluster/default.conf:/etc/nginx/conf.d/default.conf
+  links:
+   - tomcatSlave1:tomcat1
+   - tomcatSlave2:tomcat2
+   - tomcatSlave3:tomcat3
+tomcatSlave1:
+  image: tomcat
+  mem_limit: 100m
+  cpuset: "0,1"
+  volumes:
+   - ./cluster/server.xml:/usr/local/tomcat/conf/server.xml
+   - ./cluster/ROOT:/usr/local/tomcat/webapps/ROOT
+   - ./cluster/tomcat-users.xml:/usr/local/tomcat/conf/tomcat-users.xml
+tomcatSlave2:
+  image: tomcat
+  mem_limit: 100m
+  cpuset: "2"  
+  volumes:
+   - ./cluster/server.xml:/usr/local/tomcat/conf/server.xml
+   - ./cluster/ROOT:/usr/local/tomcat/webapps/ROOT
+   - ./cluster/tomcat-users.xml:/usr/local/tomcat/conf/tomcat-users.xml
+tomcatSlave3:
+  image: tomcat
+  mem_limit: 100m
+  cpuset: "3"
+  volumes:
+   - ./cluster/server.xml:/usr/local/tomcat/conf/server.xml
+   - ./cluster/ROOT:/usr/local/tomcat/webapps/ROOT
+   - ./cluster/tomcat-users.xml:/usr/local/tomcat/conf/tomcat-users.xml
