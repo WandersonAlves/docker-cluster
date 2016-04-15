@@ -9,27 +9,28 @@ nginx:
    - tomcatSlave1:tomcat1
    - tomcatSlave2:tomcat2
    - tomcatSlave3:tomcat3
+#   - tomcatSlave4:tomcat4
 tomcatSlave1:
   image: tomcat
-  mem_limit: 100m
-  cpuset: "0,1"
   volumes:
    - ./cluster/server.xml:/usr/local/tomcat/conf/server.xml
    - ./cluster/ROOT:/usr/local/tomcat/webapps/ROOT
    - ./cluster/tomcat-users.xml:/usr/local/tomcat/conf/tomcat-users.xml
 tomcatSlave2:
   image: tomcat
-  mem_limit: 100m
-  cpuset: "2"  
   volumes:
    - ./cluster/server.xml:/usr/local/tomcat/conf/server.xml
    - ./cluster/ROOT:/usr/local/tomcat/webapps/ROOT
    - ./cluster/tomcat-users.xml:/usr/local/tomcat/conf/tomcat-users.xml
 tomcatSlave3:
   image: tomcat
-  mem_limit: 100m
-  cpuset: "3"
   volumes:
    - ./cluster/server.xml:/usr/local/tomcat/conf/server.xml
    - ./cluster/ROOT:/usr/local/tomcat/webapps/ROOT
    - ./cluster/tomcat-users.xml:/usr/local/tomcat/conf/tomcat-users.xml
+#tomcatSlave4:
+#  image: tomcat
+#  volumes:
+#   - ./cluster/server.xml:/usr/local/tomcat/conf/server.xml
+#   - ./cluster/ROOT:/usr/local/tomcat/webapps/ROOT
+#   - ./cluster/tomcat-users.xml:/usr/local/tomcat/conf/tomcat-users.xml
